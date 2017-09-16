@@ -1,6 +1,7 @@
 # This script is designed to work with ubuntu 16.04 LTS
 
 # ensure system is updated and has basic build tools
+sudo apt-get install bzip2
 sudo apt-get update
 sudo apt-get --assume-yes upgrade
 sudo apt-get --assume-yes install tmux build-essential gcc g++ make binutils
@@ -18,8 +19,8 @@ nvidia-smi
 # install Anaconda for current user
 mkdir downloads
 cd downloads
-wget "https://repo.continuum.io/archive/Anaconda2-4.2.0-Linux-x86_64.sh" -O "Anaconda2-4.2.0-Linux-x86_64.sh"
-bash "Anaconda2-4.2.0-Linux-x86_64.sh" -b
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash "Miniconda3-latest-Linux-x86_64.sh" -b
 
 echo "export PATH=\"$HOME/anaconda2/bin:\$PATH\"" >> ~/.bashrc
 export PATH="$HOME/anaconda2/bin:$PATH"
@@ -36,7 +37,8 @@ floatX = float32
 root = /usr/local/cuda" > ~/.theanorc
 
 # install and configure keras
-pip install keras==1.2.2
+# pip install keras==1.2.2
+pip install keras
 mkdir ~/.keras
 echo '{
     "image_dim_ordering": "th",
@@ -52,11 +54,20 @@ cd cuda
 sudo cp lib64/* /usr/local/cuda/lib64/
 sudo cp include/* /usr/local/cuda/include/
 
+# create a SSL certificate for SSL connection
+cd ~/
+mkdir ssl
+cd ssl
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout "cert.key" -out "cert.pem" -batch
+
 # configure jupyter and prompt for password
 jupyter notebook --generate-config
 jupass=`python -c "from notebook.auth import passwd; print(passwd())"`
 echo "c.NotebookApp.password = u'"$jupass"'" >> $HOME/.jupyter/jupyter_notebook_config.py
-echo "c.NotebookApp.ip = '*'
+echo "c.NotebookApp.certfile = u'$HOME/ssl/cert.pem' # path to the certificate we generated" >> $HOME/.jupyter/jupyter_notebook_config.py
+echo "c.NotebookApp.keyfile = u'$HOME/ssl/cert.key' # path to the certificate key we generated" >> $HOME/.jupyter/jupyter_notebook_config.py
+echo "c.IPKernelApp.pylab = 'inline'  # in-line figure when using Matplotlib" >> $HOME/.jupyter/jupyter_notebook_config.py
+echo "c.NotebookApp.ip = '*' # serve the notebooks locally
 c.NotebookApp.open_browser = False" >> $HOME/.jupyter/jupyter_notebook_config.py
 
 # clone the fast.ai course repo and prompt to start notebook
