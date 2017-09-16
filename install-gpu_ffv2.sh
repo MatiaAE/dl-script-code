@@ -20,7 +20,7 @@ nvidia-smi
 mkdir downloads
 cd downloads
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-sudo bash Miniconda3-latest-Linux-x86_64.sh
+sudo bash Miniconda3-latest-Linux-x86_64.sh -b
 
 echo "export PATH=\"$HOME/anaconda2/bin:\$PATH\"" >> ~/.bashrc
 export PATH="$HOME/anaconda2/bin:$PATH"
