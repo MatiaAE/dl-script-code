@@ -23,7 +23,7 @@ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh -b
 
 echo "export PATH=\"$HOME/miniconda3/bin:\$PATH\"" >> ~/.bashrc
-export PATH="$HOME/anaconda2/bin:$PATH"
+export PATH="$HOME/miniconda3/bin:$PATH"
 conda install -y bcolz
 conda upgrade -y --all
 
