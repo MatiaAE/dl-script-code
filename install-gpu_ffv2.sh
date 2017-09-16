@@ -20,10 +20,11 @@ nvidia-smi
 mkdir downloads
 cd downloads
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash Miniconda3-latest-Linux-x86_64.sh -b
+bash Miniconda3-latest-Linux-x86_64.sh -b # DO NOT sudo bash this or could not update the packages
 
 echo "export PATH=\"$HOME/miniconda3/bin:\$PATH\"" >> ~/.bashrc
 export PATH="$HOME/miniconda3/bin:$PATH"
+conda install -y pandas numpy scikit-learn jupyter
 conda install -y bcolz
 conda upgrade -y --all
 
