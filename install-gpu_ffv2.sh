@@ -8,6 +8,8 @@ sudo apt-get --assume-yes install tmux build-essential gcc g++ make binutils
 sudo apt-get --assume-yes install software-properties-common
 
 # download and install GPU drivers
+mkdir downloads
+cd downloads
 wget "http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_8.0.44-1_amd64.deb" -O "cuda-repo-ubuntu1604_8.0.44-1_amd64.deb"
 
 sudo dpkg -i cuda-repo-ubuntu1604_8.0.44-1_amd64.deb
@@ -16,9 +18,7 @@ sudo apt-get -y install cuda
 sudo modprobe nvidia
 nvidia-smi
 
-# install Anaconda for current user
-mkdir downloads
-cd downloads
+# install MiniConda and some common packages for current user
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh -b # DO NOT sudo bash this or could not update the packages
 
@@ -27,6 +27,34 @@ export PATH="$HOME/miniconda3/bin:$PATH"
 conda install -y pandas numpy scikit-learn jupyter pillow
 conda install -y bcolz
 conda upgrade -y --all
+
+# install Docker
+# Step 1) Step up the Repository
+sudo apt-get update
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+#          Add Docker's officer PGP key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+#          Verify that you now have the key with the fingerprint 9DC8 5822 9FC7 
+#          DD38 854A E2D8 8D81 803C 0EBF CD88, by searching for the last 8 characters of the fingerprint.
+sudo apt-key fingerprint 0EBFCD88
+#          Set up the stable repository
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+
+# install Docker
+# Step 2) Install Docker CE
+sudo apt-get update
+sudo apt-get -y install docker-ce
+# sudo apt-get install docker-ce=<VERSION>     specify a particular version to install for production system
+
+# Verify that the Docker CE installed correctly by running the hello-world image
+sudo docker run hello-world
 
 # install and configure theano
 pip install theano
