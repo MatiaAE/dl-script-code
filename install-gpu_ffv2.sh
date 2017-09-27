@@ -55,6 +55,10 @@ sudo apt-get -y install docker-ce
 
 # Verify that the Docker CE installed correctly by running the hello-world image
 sudo docker run hello-world
+# Add the current user to the docker group to solve Docker permission denied 
+# https://techoverflow.net/2017/03/01/solving-docker-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket/
+sudo usermod -a -G docker $USER 
+echo "Added the current user to docker group - Log out and log back in to solve Docker permission error"
 
 # install and configure theano
 pip install theano
