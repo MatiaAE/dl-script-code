@@ -28,38 +28,6 @@ conda install -y pandas numpy scikit-learn jupyter pillow
 conda install -y bcolz
 conda upgrade -y --all
 
-# install Docker
-# Step 1) Step up the Repository
-sudo apt-get update
-sudo apt-get install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    software-properties-common
-#          Add Docker's officer PGP key
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-#          Verify that you now have the key with the fingerprint 9DC8 5822 9FC7 
-#          DD38 854A E2D8 8D81 803C 0EBF CD88, by searching for the last 8 characters of the fingerprint.
-sudo apt-key fingerprint 0EBFCD88
-#          Set up the stable repository
-sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
-
-# install Docker
-# Step 2) Install Docker CE
-sudo apt-get update
-sudo apt-get -y install docker-ce
-# sudo apt-get install docker-ce=<VERSION>     specify a particular version to install for production system
-
-# Verify that the Docker CE installed correctly by running the hello-world image
-sudo docker run hello-world
-# Add the current user to the docker group to solve Docker permission denied 
-# https://techoverflow.net/2017/03/01/solving-docker-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket/
-sudo usermod -a -G docker $USER 
-echo "Added the current user to docker group - Log out and log back in to solve Docker permission error"
-
 # install and configure theano
 pip install theano
 echo "[global]
