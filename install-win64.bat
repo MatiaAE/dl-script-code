@@ -1,4 +1,5 @@
-conda create -n tensorflow
+conda create -n tensorflow python=3.5 # theano 0.9 does not work well, but 0.8* does not support python 3.6
+# 'conda-env remove -n tensorflow' to remove an environment
 conda install conda-build
 activate tensorflow
 conda install -y numpy matplotlib scipy scikit-learn pillow pandas jupyter
