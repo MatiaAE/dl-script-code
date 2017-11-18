@@ -21,4 +21,4 @@ ECHO #####################################
 ECHO # install Machine Learning packages #
 ECHO #####################################
 conda install -y py-xgboost
-pip install -y hyperopt ImageHash
+pip install hyperopt ImageHash
