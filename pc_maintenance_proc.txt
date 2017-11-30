@@ -16,4 +16,4 @@
         e. 用Avast扫毒
            （按b的方法进入“Avast Free Antivirus"里面 > 点击“运行智能扫描” (Eng: "Smart Scan") > 选择“Threat Scan” > 点击“Start Scan”）
         f. （进阶）用Secunia Personal Security Inspector看看电脑有没有作业系统以外的软件需要补丁
-           （点左下角的视窗符号 > 搜索“psi”，点“Secunia PSI" > 输入管理员密码 > 在"Dashboard"页面看看右边中部Updates: 后面写的是不是Current，如果不是便需要点击来更新 > 然后点击“Settings” > 选择“Application”页面 > 点击“Install Application Updates”）
+           （点左下角的视窗符号 > 搜索“psi”，点“Secunia PSI" > 输入管理员密码 > 点击界面左下角的“Scan Again” > 等扫描结束后可知道哪些需要打补丁，可以跟系统管理员联系查询）
