@@ -1,0 +1,28 @@
+install windows (already latest)
+http://www.microsoft.com/en-us/accessibility/windows10upgrade
+
+refresh win
+
+Chrome
+https://www.google.com/chrome/browser/thankyou.html?statcb=1&installdataindex=defaultbrowser
+
+Security:
+download avast
+https://www.avast.com/download-thank-you.php?product=FAV-ONLINE&locale=en-ww
+download malwarebyte
+https://downloads.malwarebytes.com/file/mb3/
+download secunia psi
+http://learn.flexerasoftware.com/SVM-EVAL-Personal-Software-Inspector-Thanks
+download trafficlight
+https://chrome.google.com/webstore/detail/trafficlight/cfnpidifppmenkapgihekkeednfoenal
+download siteadvisors
+https://home.mcafee.com/root/Landingpage.aspx?lpname=thankyou&affid=0
+
+download 7-zip
+http://7-zip.org/a/7z1604-x64.exe
+download office
+https://zh-cn.libreoffice.org/download/libreoffice-fresh/
+download sumatrapdf
+https://www.sumatrapdfreader.org/download-free-pdf-viewer.html
+
+come up with update procedure
