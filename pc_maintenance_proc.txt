@@ -1,0 +1,19 @@
+要让你的Windows 10 电脑常保青春？以下是一些建议：
+
+    1. 知道你的管理员账户(Administrator)密码，但不要轻易使用。强烈建议你的用户密码不要设成跟管理员密码是一样的。
+    2. 当你不知道为什么被要求输入管理员密码时，请按取消。查清楚后再试。
+    3. 养成习惯定期把硬盘上的重要文件备份到一个安全地方的习惯，比如说加密了的移动硬盘，或者云端储存(例如：Google Drive，百度云盘)。
+       这样一旦需要把电脑清掉重灌你也不会丢东西。
+    4. 定期为你的电脑做以下保养操作，建议在每周三（因为微软的补丁发布定在美国时间周二）晚上预留两三个小时在背景做：
+        a. 更新Windows，a,b,c可以同时进行
+           （中：点左下角的视窗符号 > 搜索“检查更新”，点进去 > 点击“检查更新”; Eng: 如中文指示，把“检查更新”换成“Check for Updates”）
+        b. 更新杀毒软件Avast
+           （点左下角的视窗符号 > 搜索“Avast”，点“Avast Free Antivirus" > 点击“设定(Setting)” > 点击“更新(Update)” > 分别点击两个项目旁边的“更新(Update)”）
+        c. 更新杀毒软件MalwareBytes
+           （点左下角的视窗符号 > 搜索“Malware”，点“Malwarebytes" > 在"Dashboard"页面看看右边中部Updates: 后面写的是不是Current，如果不是便需要点击来更新 > 然后点击“Settings” > 选择“Application”页面 > 点击“Install Application Updates”）
+        d. 用MalwareBytes扫毒 -- 我们已经进入扫毒工序，建议完成了d才做e，以免使系统过分缓慢
+           （在“Malwarebytes"里面 > 点击“Scan” > 选择“Threat Scan” > 点击“Start Scan”）
+        e. 用Avast扫毒
+           （按b的方法进入“Avast Free Antivirus"里面 > 点击“运行智能扫描” (Eng: "Smart Scan") > 选择“Threat Scan” > 点击“Start Scan”）
+        f. （进阶）用Secunia Personal Security Inspector看看电脑有没有作业系统以外的软件需要补丁
+           （点左下角的视窗符号 > 搜索“psi”，点“Secunia PSI" > 输入管理员密码 > 在"Dashboard"页面看看右边中部Updates: 后面写的是不是Current，如果不是便需要点击来更新 > 然后点击“Settings” > 选择“Application”页面 > 点击“Install Application Updates”）
