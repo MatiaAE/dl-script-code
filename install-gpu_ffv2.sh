@@ -1,7 +1,8 @@
 # This script is designed to work with ubuntu 16.04 LTS
+# Forked from: https://github.com/fastai/courses/blob/master/setup/install-gpu.sh
 
 # ensure system is updated and has basic build tools
-sudo apt-get install bzip2
+sudo apt-get install dtrx # preferred over bzip2 because dtrx handles a wide range of archive format 7zip, zip, ...
 sudo apt-get update
 sudo apt-get --assume-yes upgrade
 sudo apt-get --assume-yes install tmux build-essential gcc g++ make binutils
@@ -38,8 +39,8 @@ floatX = float32
 root = /usr/local/cuda" > ~/.theanorc
 
 # install and configure keras
-# pip install keras==1.2.2
-pip install keras
+pip install keras==1.2.2 # use a fixed version of Keras so that package update won't necessitate code change
+
 mkdir ~/.keras
 echo '{
     "image_dim_ordering": "th",
@@ -50,7 +51,8 @@ echo '{
 
 # install cudnn libraries
 wget "http://files.fast.ai/files/cudnn.tgz" -O "cudnn.tgz"
-tar -zxf cudnn.tgz
+# tar -zxf cudnn.tgz
+dtrx cudnn.tgz
 cd cuda
 sudo cp lib64/* /usr/local/cuda/lib64/
 sudo cp include/* /usr/local/cuda/include/
