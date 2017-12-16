@@ -53,8 +53,7 @@ echo '{
 
 # install cudnn libraries
 wget "http://files.fast.ai/files/cudnn.tgz" -O "cudnn.tgz"
-# tar -zxf cudnn.tgz
-dtrx cudnn.tgz
+tar -zxf cudnn.tgz
 cd cuda
 sudo cp lib64/* /usr/local/cuda/lib64/
 sudo cp include/* /usr/local/cuda/include/
