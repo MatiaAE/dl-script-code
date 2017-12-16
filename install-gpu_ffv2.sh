@@ -1,5 +1,7 @@
 # This script is designed to work with ubuntu 16.04 LTS
 # Forked from: https://github.com/fastai/courses/blob/master/setup/install-gpu.sh
+# Download the RAW one here: "wget https://raw.githubusercontent.com/ChongFF/dl-script-code/master/install-gpu_ffv2.sh"
+# Run the script by typing: "bash install-gpu.sh"
 
 # ensure system is updated and has basic build tools
 sudo apt-get install dtrx # preferred over bzip2 because dtrx handles a wide range of archive format 7zip, zip, ...
