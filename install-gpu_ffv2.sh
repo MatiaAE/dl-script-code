@@ -2,6 +2,13 @@
 # Forked from: https://github.com/fastai/courses/blob/master/setup/install-gpu.sh
 # Download the RAW one here: "wget https://raw.githubusercontent.com/ChongFF/dl-script-code/master/install-gpu_ffv2.sh"
 # Run the script by typing: "bash install-gpu.sh"
+# Wish-list:
+# 1) Make it to work with tensorflow-gpu, requires CUDA 6.0; tried tensorflow-gpu 1.2, but the CUDA 5.0 symoblic link does not work
+#    https://www.nvidia.com/en-us/data-center/gpu-accelerated-applications/tensorflow/
+#    sudo apt-get install libcupti-dev 
+#    pip install tensorflow-gpu=1.2 # 1.3 requires cuDNN 6.0
+# 2) Run jupytr notebook in Tensorflow Docker Image
+# https://stackoverflow.com/questions/33636925/how-do-i-start-tensorflow-docker-jupyter-notebook
 
 # ensure system is updated and has basic build tools
 sudo apt-get update
