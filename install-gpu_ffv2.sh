@@ -1,7 +1,9 @@
 # This script is designed to work with ubuntu 16.04 LTS
+# It prepare a GPU-enabled conda environment ('deeplearning') with both Keras 1.2.2, Theano 0.9, Tensorflow (GPU) 1.2
+
 # Forked from: https://github.com/fastai/courses/blob/master/setup/install-gpu.sh
 # Download the RAW one here: "wget https://raw.githubusercontent.com/ChongFF/dl-script-code/master/install-gpu_ffv2.sh"
-# Run the script by typing: "bash install-gpu.sh"
+# Run the script by typing: "bash <script_name.sh>"
 # Wish-list:
 # 1) Make it to work with tensorflow-gpu, requires CUDA 6.0; tried tensorflow-gpu 1.2, but the CUDA 5.0 symoblic link does not work
 #    https://www.nvidia.com/en-us/data-center/gpu-accelerated-applications/tensorflow/
@@ -76,8 +78,11 @@ cd cuda
 sudo cp lib64/* /usr/local/cuda/lib64/
 sudo cp include/* /usr/local/cuda/include/
 
-# Getting Ready for tensorflow-gpu (1.2) deployment
+# Advanced Profiling Tool Getting Ready for tensorflow-gpu (1.2) deployment
 sudo apt-get --assume-yes install libcupti-dev
+
+# Install Tensorflow GPU 1.2 (latest that would work with cuDNN 5.1)
+pip install tensorflow-gpu==1.2
 
 # create a SSL certificate for SSL connection
 cd ~/
