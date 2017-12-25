@@ -13,11 +13,18 @@ sudo apt-get --assume-yes install software-properties-common
 # download and install GPU drivers
 mkdir downloads
 cd downloads
+wget "http://us.download.nvidia.com/tesla/384.66/nvidia-diag-driver-local-repo-ubuntu1604-384.66_1.0-1_amd64.deb"
+sudo dpkg -i nvidia-diag-driver-local-repo-ubuntu1604-384.66_1.0-1_amd64.deb
+sudo apt-get update
+# Use 'apt-cache policy <package name>' to shows installed package version and also all the available versions in the repository
+sudo apt-get -y install cuda-drivers=384.66-1
+
 wget "http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_8.0.44-1_amd64.deb" -O "cuda-repo-ubuntu1604_8.0.44-1_amd64.deb"
 
 sudo dpkg -i cuda-repo-ubuntu1604_8.0.44-1_amd64.deb
 sudo apt-get update
-sudo apt-get -y install cuda
+# sudo apt-get -y install cuda
+sudo apt-get -y install cuda=8.0.44-1
 sudo modprobe nvidia
 nvidia-smi
 
