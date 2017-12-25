@@ -4,15 +4,19 @@
 # Forked from: https://github.com/fastai/courses/blob/master/setup/install-gpu.sh
 # Download the RAW one here: "wget https://raw.githubusercontent.com/ChongFF/dl-script-code/master/install-gpu_ffv2.sh"
 # Run the script by typing: "bash <script_name.sh>"
+
 # Wish-list:
-# 1) Make it to work with tensorflow-gpu, requires CUDA 6.0; tried tensorflow-gpu 1.2, but the CUDA 5.0 symoblic link does not work
-#    https://www.nvidia.com/en-us/data-center/gpu-accelerated-applications/tensorflow/
-#    sudo apt-get install libcupti-dev 
-#    pip install tensorflow-gpu==1.2 # 1.3 requires cuDNN 6.0
 # 2) Run jupytr notebook in Tensorflow Docker Image
 #    https://stackoverflow.com/questions/33636925/how-do-i-start-tensorflow-docker-jupyter-notebook
 # 3) Or try deploying a tensorflow-gpu container (listed on Google Container Registry) to Compute instance
 #    http://b.gcr.io/tensorflow/tensorflow
+
+# *****************
+# * Tech Details: *
+# *****************
+# - CUDA requires matching version of NVidia driver
+# - cuCNN 5.1 only supports up to tensorflow-gpu 1.2
+# - tensorflow-gpu requires libcupti-dev (NVIDIA CUDA Profiler Tools Interface development files) or it would fail
 
 # ensure system is updated and has basic build tools
 sudo apt-get update
@@ -44,7 +48,7 @@ bash Miniconda3-latest-Linux-x86_64.sh -b # DO NOT sudo bash this or could not u
 
 echo "export PATH=\"$HOME/miniconda3/bin:\$PATH\"" >> ~/.bashrc
 export PATH="$HOME/miniconda3/bin:$PATH"
-conda create -n deeplearning python=3.5
+conda create -y -n deeplearning python=3.5
 source activate deeplearning
 
 conda install -y pandas numpy scikit-learn jupyter pillow
