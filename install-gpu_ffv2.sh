@@ -4,10 +4,10 @@
 # Run the script by typing: "bash install-gpu.sh"
 
 # ensure system is updated and has basic build tools
-sudo apt-get install dtrx # preferred over bzip2 because dtrx handles a wide range of archive format 7zip, zip, ...
 sudo apt-get update
 sudo apt-get --assume-yes upgrade
-sudo apt-get --assume-yes install tmux build-essential gcc g++ make binutils
+# dtrx preferred over bzip2 because dtrx handles a wide range of archive format 7zip, zip, ...
+sudo apt-get --assume-yes install dtrx tmux build-essential gcc g++ make binutils
 sudo apt-get --assume-yes install software-properties-common
 
 # download and install GPU drivers
