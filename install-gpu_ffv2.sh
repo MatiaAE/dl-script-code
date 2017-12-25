@@ -41,8 +41,8 @@ conda install -y pandas numpy scikit-learn jupyter pillow
 conda install -y bcolz
 conda upgrade -y --all
 
-# install and configure theano
-pip install theano
+# install and configure theano (pip install will install too new a version)
+conda install -y theano
 echo "[global]
 device = gpu
 floatX = float32
