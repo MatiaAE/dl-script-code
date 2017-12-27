@@ -1,4 +1,4 @@
-# This script is designed to work with ubuntu 16.04 LTS
+# This script is designed to work with ubuntu 16.04 LTS, with NVidia Tesla K80 system (e.g. Google Cloud Platform)
 # It prepare a GPU-enabled conda environment ('deeplearning') with both Keras 1.2.2, Theano 0.9, Tensorflow (GPU) 1.2
 
 # Forked from: https://github.com/fastai/courses/blob/master/setup/install-gpu.sh
