@@ -29,12 +29,15 @@ sudo apt-get --assume-yes install software-properties-common
 mkdir downloads
 cd downloads
 
+# Found it here: http://www.nvidia.com/Download/index.aspx?lang=en-us
 wget "http://us.download.nvidia.com/tesla/384.66/nvidia-diag-driver-local-repo-ubuntu1604-384.66_1.0-1_amd64.deb"
 sudo dpkg -i nvidia-diag-driver-local-repo-ubuntu1604-384.66_1.0-1_amd64.deb
 sudo apt-get update
 # Use 'apt-cache policy <package name>' to shows installed package version and also all the available versions in the repository
 sudo apt-get --assume-yes --allow-unauthenticated install cuda-drivers=384.66-1
 
+# Found it here: https://developer.nvidia.com/cuda-toolkit-archive
+# CUDA 8.0 (not CUDA 9.0) is chosen becaues it is recommended for tensorflow-gpu
 wget "http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_8.0.44-1_amd64.deb" -O "cuda-repo-ubuntu1604_8.0.44-1_amd64.deb"
 sudo dpkg -i cuda-repo-ubuntu1604_8.0.44-1_amd64.deb
 sudo apt-get update
