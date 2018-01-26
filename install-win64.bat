@@ -20,5 +20,5 @@ REM in your tensorflow environment "envs\tensorflow\Lib\site-packages\html5lib" 
 ECHO #####################################
 ECHO # install Machine Learning packages #
 ECHO #####################################
-conda install -y py-xgboost
+conda install -y py-xgboost matplotlib seaborn
 pip install hyperopt ImageHash
