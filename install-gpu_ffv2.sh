@@ -115,4 +115,4 @@ echo "If you get an error instead, try restarting your session so your $PATH is 
 
 # Installing commonly used packages
 pip install imagehash hyperopt
-conda install -y py-xgboost
+conda install -y py-xgboost matplotlib seaborn
