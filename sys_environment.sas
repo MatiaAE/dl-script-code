@@ -1,0 +1,10 @@
+DATA _null_;
+    format mem comma20.;
+    mem = input(getoption('xmrlmem'),20.)/1024/1024/1024;
+    cpu = &sysncpu;
+    put mem=;
+    put cpu=;
+RUN;
+PROC SETINIT;
+    TITLE Available Packages;
+RUN;
