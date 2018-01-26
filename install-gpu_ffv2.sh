@@ -112,3 +112,7 @@ cd ~
 git clone https://github.com/fastai/courses.git
 echo "\"jupyter notebook\" will start Jupyter on port 8888"
 echo "If you get an error instead, try restarting your session so your $PATH is updated"
+
+# Installing commonly used packages
+pip install imagehash hyperopt
+conda install -y py-xgboost
