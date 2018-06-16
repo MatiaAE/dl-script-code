@@ -116,3 +116,9 @@ echo "If you get an error instead, try restarting your session so your $PATH is 
 # Installing commonly used packages
 pip install imagehash hyperopt
 conda install -y py-xgboost matplotlib seaborn
+
+export PATH=~/miniconda3/bin:$PATH
+pip install kaggle
+mkdir kaggle_key
+mkdir data
+mkdir src
